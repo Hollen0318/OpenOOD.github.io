@@ -16,7 +16,7 @@
   <meta charset="UTF-8" />
   <!--  <meta name="viewport" content="width=device-width, initial-scale=1" />-->
   <meta name="viewport" content="width=1024" />
-  <title>RobustBench: Adversarial robustness benchmark</title>
+  <title>OpenOOD: Out-of-Distribution Benchmark</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -41,7 +41,7 @@
   <nav class="navbar navbar-expand-md">
       <div class="container">
         <a class="navbar-brand" href="./index.html"
-          >RobustBench</a>
+          >OpenOOD</a>
         <button
           class="navbar-toggler navbar-light"
           type="button"
@@ -67,7 +67,7 @@
               <a class="nav-link" href="#contribute">Contribute</a>
             </li>
             <li>
-              <a class="nav-link text-nowrap" href="https://github.com/RobustBench/robustbench"
+              <a class="nav-link text-nowrap" href="https://github.com/openood"
                 >Model Zoo 🚀</a 
               >
             </li>
@@ -81,7 +81,7 @@
   <header>
     <div class="header-block container">
       <div class="logo"><img src="./images/logo.png" alt="logo" /></div>
-      <div class="title">RobustBench</div>
+      <div class="title">OpenOOD</div>
       <div class="description">
         A standardized benchmark for adversarial robustness
       </div>
@@ -93,7 +93,7 @@
     <section id="introduction">
       <div class="overview">
         <p class="doublealign">
-          The goal of <strong>RobustBench</strong> is to systematically track
+          The goal of <strong>OpenOOD</strong> is to systematically track
           the <em>real</em> progress in adversarial robustness. There are
           already
           <a href="https://nicholas.carlini.com/writing/2019/all-adversarial-example-papers.html">more than 3&#39;000
@@ -111,7 +111,7 @@
           robustness and
           CIFAR-10-C for the evaluation of robustness to common corruptions. Additionally,
           we open source the
-          <a href="https://github.com/RobustBench/robustbench">RobustBench library</a>
+          <a href="https://github.com/openood">OpenOOD library</a>
           that contains models used for the leaderboard to facilitate their
           usage for downstream applications. <br><br>
 
@@ -124,7 +124,7 @@
           <strong> News:</strong>
           <ul>
             <li>  <strong>May 2022:</strong> 
-              We have extended the common corruptions leaderboard on ImageNet with <a href="https://3dcommoncorruptions.epfl.ch">3D Common Corruptions</a> (ImageNet-3DCC). ImageNet-3DCC evaluation is interesting since (1) it includes more realistic corruptions and (2) it can be used to assess generalization of the existing models which may have overfitted to ImageNet-C. For a quickstart, click <a href="https://github.com/RobustBench/robustbench#new-evaluating-robustness-of-imagenet-models-against-3d-common-corruptions-imagenet-3dcc">here</a>. See the new leaderboard with ImageNet-C and ImageNet-3DCC <a href="https://robustbench.github.io/#div_imagenet_corruptions_heading">here</a> (also mCE metrics can be found <a href="https://github.com/RobustBench/robustbench#corruptions-imagenet-c--imagenet-3dcc">here</a>).
+              We have extended the common corruptions leaderboard on ImageNet with <a href="https://3dcommoncorruptions.epfl.ch">3D Common Corruptions</a> (ImageNet-3DCC). ImageNet-3DCC evaluation is interesting since (1) it includes more realistic corruptions and (2) it can be used to assess generalization of the existing models which may have overfitted to ImageNet-C. For a quickstart, click <a href="https://github.com/openood">here</a>. See the new leaderboard with ImageNet-C and ImageNet-3DCC <a href="https://openood.github.io/#div_imagenet_corruptions_heading">here</a> (also mCE metrics can be found <a href="https://github.com/openood#corruptions-imagenet-c--imagenet-3dcc">here</a>).
              </li>
              <li>  <strong>May 2022:</strong> 
               We fixed the preprocessing issue for ImageNet corruption evaluations: previously we used resize to 256x256 and central crop to 224x224 which wasn't necessary since the ImageNet-C images are already 224x224. Note that this changed the ranking between the top-1 and top-2 entries.
@@ -162,9 +162,9 @@
             <hr />
           </div>
           Check out the
-          <a href="https://github.com/RobustBench/robustbench#model-zoo">available models</a>
+          <a href="https://github.com/openood">available models</a>
           and our
-          <a href="https://github.com/RobustBench/robustbench#notebooks">Colab tutorials</a>.
+          <a href="https://github.com/openood">Colab tutorials</a>.
           <div class="codeblock">
             <div class="vspace10"></div>
             <!--
@@ -184,15 +184,15 @@ clean_acc, robust_acc = benchmark(model,
             -->
             <!-- HTML generated using hilite.me -->
             <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;">
-              <pre style="margin: 0; line-height: 125%"><span style="color: #888888"># !pip install git+https://github.com/RobustBench/robustbench@v0.2.1</span>
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">robustbench.utils</span> <span style="color: #008800; font-weight: bold">import</span> load_model
+              <pre style="margin: 0; line-height: 125%"><span style="color: #888888"># !pip install git+https://github.com/openood</span>
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">openood.utils</span> <span style="color: #008800; font-weight: bold">import</span> load_model
 <span style="color: #888888"># Load a model from the model zoo</span>
 model <span style="color: #333333">=</span> load_model(model_name<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Rebuffi2021Fixing_70_16_cutmix_extra&#39;</span>,
                    dataset<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;cifar10&#39;</span>,
                    threat_model<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Linf&#39;</span>)
 
 <span style="color: #888888"># Evaluate the Linf robustness of the model using AutoAttack</span>
-<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">robustbench.eval</span> <span style="color: #008800; font-weight: bold">import</span> benchmark
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">openood.eval</span> <span style="color: #008800; font-weight: bold">import</span> benchmark
 clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
                                   dataset<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;cifar10&#39;</span>,
                                   threat_model<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Linf&#39;</span>)
@@ -348,17 +348,17 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
       </div>
 
       <p class="qa-box">
-        <span class="question">&#10148; How does the RobustBench leaderboard differ from the
+        <span class="question">&#10148; How does the OpenOOD leaderboard differ from the
           <a href="https://github.com/fra31/auto-attack">AutoAttack leaderboard</a>? 🤔
         </span>
         <br />
         <span class="answer"> The <a href="https://github.com/fra31/auto-attack">AutoAttack leaderboard</a> was
-          the starting point of RobustBench. Now only the RobustBench leaderboard is actively maintained.
+          the starting point of OpenOOD. Now only the OpenOOD leaderboard is actively maintained.
         </span>
       </p>
 
       <p class="qa-box">
-        <span class="question">&#10148; How does the RobustBench leaderboard differ from
+        <span class="question">&#10148; How does the OpenOOD leaderboard differ from
           <a href="https://www.robust-ml.org/">robust-ml.org</a>? 🤔
         </span>
         <br />
@@ -384,10 +384,10 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
         <br />
         <span class="answer">These libraries provide implementations of different
           <em>attacks</em>. Besides the standardized benchmark,
-          <strong>RobustBench</strong> additionally provides a repository of the
+          <strong>OpenOOD</strong> additionally provides a repository of the
           most robust models. So you can start using the robust models in one
           line of code (see the tutorial
-          <a href="https://github.com/RobustBench/robustbench#model-zoo-quick-tour">here</a>).</span>
+          <a href="https://github.com/OpenOOD/OpenOOD#model-zoo-quick-tour">here</a>).</span>
       </p>
 
       <p class="qa-box">
@@ -455,8 +455,8 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
       <!-- HTML generated using hilite.me -->
       <div
         style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;">
-        <pre style="margin: 0; line-height: 125%"><span style="color: #555555; font-weight: bold">@article</span>{croce2020robustbench,
-    title<span style="color: #333333">=</span>{RobustBench: a standardized adversarial robustness benchmark},
+        <pre style="margin: 0; line-height: 125%"><span style="color: #555555; font-weight: bold">@article</span>{croce2020OpenOOD,
+    title<span style="color: #333333">=</span>{OpenOOD: a standardized adversarial robustness benchmark},
     author<span style="color: #333333">=</span>{Croce, Francesco <span style="color: #000000; font-weight: bold">and</span> Andriushchenko, Maksym <span style="color: #000000; font-weight: bold">and</span> Sehwag, Vikash <span style="color: #000000; font-weight: bold">and</span> Debenedetti, Edoardo <span style="color: #000000; font-weight: bold">and</span> Flammarion, Nicolas
     <span style="color: #000000; font-weight: bold">and</span> Chiang, Mung <span style="color: #000000; font-weight: bold">and</span> Mittal, Prateek <span style="color: #000000; font-weight: bold">and</span> Matthias Hein},
     journal<span style="color: #333333">=</span>{arXiv preprint arXiv:2010.09670},
@@ -471,13 +471,13 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
     <section id="contribute">
       <div class="details">
         <div class="box2">
-          <p>Contribute to RobustBench!</p>
+          <p>Contribute to OpenOOD!</p>
           <div class="divider">
             <hr />
           </div>
           We welcome any contribution in terms of both new robust models and
           evaluations. Please check
-          <a href="https://github.com/RobustBench/robustbench#how-to-contribute">here</a>
+          <a href="https://github.com/OpenOOD/OpenOOD#how-to-contribute">here</a>
           for more details.
           <br />
           <br />
@@ -524,7 +524,7 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
   <hr class="bottomrule" />
 
   <footer>
-    <small>&copy; 2021, RobustBench;
+    <small>&copy; 2021, OpenOOD;
       <a href="https://icons8.com/icon/100413/access">Icons from Icons8</a></small>
   </footer>
 
