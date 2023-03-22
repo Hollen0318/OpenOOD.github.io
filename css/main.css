@@ -50,7 +50,7 @@ footer {
   position: fixed;
   background-color: whitesmoke;
   margin-bottom: 30px;
-  background-image: linear-gradient(to bottom, #f4a460, white);
+  background-image: linear-gradient(to bottom, #2AA7DE, white);
   top: 0;
   width: 100%;
   z-index: 1;
@@ -111,7 +111,7 @@ footer {
   grid-column: 2;
   grid-row: 1;
   font-size: 4em;
-  color: #f58025;
+  color: #2AA7DE ;
   font-weight: bolder;
   font-variant: small-caps;
   text-align: left;

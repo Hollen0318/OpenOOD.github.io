@@ -16,7 +16,7 @@
   <meta charset="UTF-8" />
   <!--  <meta name="viewport" content="width=device-width, initial-scale=1" />-->
   <meta name="viewport" content="width=1024" />
-  <title>RobustBench: Adversarial robustness benchmark</title>
+  <title>OpenOODBench: Out-Of-Distribution benchmark</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -81,9 +81,9 @@
   <header>
     <div class="header-block container">
       <div class="logo"><img src="./images/logo.png" alt="logo" /></div>
-      <div class="title">RobustBench</div>
+      <div class="title">OpenOOD</div>
       <div class="description">
-        A standardized benchmark for adversarial robustness
+        A standardized benchmark for Out-Of-Distribution Detection
       </div>
     </div>
   </header>
@@ -93,33 +93,8 @@
     <section id="introduction">
       <div class="overview">
         <p class="doublealign">
-          The goal of <strong>RobustBench</strong> is to systematically track
-          the <em>real</em> progress in adversarial robustness. There are
-          already
-          <a href="https://nicholas.carlini.com/writing/2019/all-adversarial-example-papers.html">more than 3&#39;000
-            papers</a>
-          on this topic, but it is still unclear which approaches really work
-          and which only lead to
-          <a href="https://arxiv.org/abs/1802.00420">overestimated robustness</a>. We start from benchmarking common
-          corruptions,
-          \(\ell_\infty\)- and
-          \(\ell_2\)-robustness since these are the most studied settings in the
-          literature. We use
-          <a href="https://github.com/fra31/auto-attack">AutoAttack</a>, an
-          ensemble of white-box and black-box attacks, to standardize the
-          evaluation (for details see <a href="https://arxiv.org/abs/2010.09670">our paper</a>) of the \(\ell_p\)
-          robustness and
-          CIFAR-10-C for the evaluation of robustness to common corruptions. Additionally,
-          we open source the
-          <a href="https://github.com/RobustBench/robustbench">RobustBench library</a>
-          that contains models used for the leaderboard to facilitate their
-          usage for downstream applications. <br><br>
-
-          To prevent potential overadaptation of new defenses to AutoAttack, we also welcome external evaluations based
-          on <em>adaptive attacks</em>, especially where AutoAttack <a href="https://github.com/fra31/auto-attack/blob/master/flags_doc.md">flags</a>
-          a potential overestimation of robustness. For each model, we are interested in the best known robust accuracy
-          and see AutoAttack and adaptive attacks as complementary.
-
+          The goal of <strong>OpenOODBench</strong>detection is to identify and handle data samples that
+          are not from the same distribution as the training data, also known as in-distribution (ID) data. These OOD samples might come from unknown or novel classes, or they might be instances of known classes but with different characteristics due to variations in data collection or preprocessing.
           <br><br>
           <strong> News:</strong>
           <ul>
@@ -131,8 +106,6 @@
              </li>
           </ul>
 
-
-
         </p>
         <div class="flexbox-container features">
           <div class="element">
@@ -141,7 +114,7 @@
             </div>
             <p>
               Up-to-date leaderboard based <br />
-              on 120+ models
+              on 20+ models
             </p>
           </div>
           <div class="element">
@@ -237,213 +210,7 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
         </p>
       </div>
 
-      <div id="OpenOOD_Bench">
-        <table>
-          <thead>
-              <tr>
-                  <th class="rank">Rank</th>
-                  <th class="method">Paper</th>
-                  <th class="arch">Alias</th>
-                  <!-- <th>Additional Description</th> -->
-                  <th class="aa">In-Distribution Accuracy</th>
-                  <th class="ca">NearOOD AUROC</th>
-                  <th class="aa">FarOOD AUROC</th>
-                  <th class="extra-data">Outlier Data</th>
-                  <th class="venue">Venue</th>
-              </tr>
-          </thead>
-          <tbody>
-              
-              <tr>
-                  <td class = "ranktd">1</td>
-                  <td class = "methoddt"><a href="https://proceedings.mlr.press/v162/sun22d.html">Out-of-Distribution Detection with Deep Nearest Neighbors</a></td>
-                  <td class = "archtd">KNN</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">90.64 ± 0.20</td>
-                  <td class = "aatd" >92.96 ± 0.14</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ICML'22</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">2</td>
-                  <td class = "methoddt"><a href="https://proceedings.mlr.press/v70/guo17a.html">On calibration of modern neural network</a></td>
-                  <td class = "archtd">TempScale</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">88.08 ± 0.29</td>
-                  <td class = "aatd" >90.97 ± 0.52</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ICML'17</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">3</td>
-                  <td class = "methoddt"><a href="https://openreview.net/forum?id=Hkg4TI9xl">A simple baseline for detecting out-of-distribution and misclassified examples</a></td>
-                  <td class = "archtd">MSP</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">88.02 ± 0.24</td>
-                  <td class = "aatd" >90.73 ± 0.43</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ICLR'17</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">4</td>
-                  <td class = "methoddt"><a href="https://openaccess.thecvf.com/content_cvpr_2016/papers/Bendale_Towards_Open_Set_CVPR_2016_paper.pdf">Towards open-set deep networks</a></td>
-                  <td class = "archtd">OpenMax</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">87.61 ± 0.28</td>
-                  <td class = "aatd" >89.62 ± 0.19</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">CVPR'16</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">5</td>
-                  <td class = "methoddt"><a href="https://papers.nips.cc/paper/2020/hash/f5496252609c43eb8a3d147ab9b9c006-Abstract.html">Energy-based Out-of-distribution Detection</a></td>
-                  <td class = "archtd">EBO</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">87.59 ± 0.45</td>
-                  <td class = "aatd" >91.21 ± 0.92</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">NeurIPS'20</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">6</td>
-                  <td class = "methoddt"><a href="https://proceedings.mlr.press/v162/hendrycks22a.html">Scaling Out-of-Distribution Detection for Real-World Settings</a></td>
-                  <td class = "archtd">MLS</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">87.52 ± 0.46</td>
-                  <td class = "aatd" >91.10 ± 0.89</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ICML'22</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">7</td>
-                  <td class = "methoddt"><a href="https://openaccess.thecvf.com/content/CVPR2022/html/Wang_ViM_Out-of-Distribution_With_Virtual-Logit_Matching_CVPR_2022_paper.html">ViM: Out-of-Distribution With Virtual-Logit Matching</a></td>
-                  <td class = "archtd">VIM</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">87.07 ± 0.56</td>
-                  <td class = "aatd" >92.20 ± 0.13</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">CVPR'22</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">8</td>
-                  <td class = "methoddt"><a href="https://papers.nips.cc/paper/2021/hash/01894d6f048493d2cacde3c579c315a3-Abstract.html">ReAct: Out-of-distribution Detection With Rectified Activations</a></td>
-                  <td class = "archtd">ReAct</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">85.40 ± 2.98</td>
-                  <td class = "aatd" >88.12 ± 3.13</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">NeurIPS'21</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">9</td>
-                  <td class = "methoddt"><a href="https://openreview.net/forum?id=H1VGkIxRZ">Enhancing The Reliability of Out-of-distribution Image Detection in Neural Networks</a></td>
-                  <td class = "archtd">ODIN</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">82.91 ± 1.83</td>
-                  <td class = "aatd" >87.96 ± 0.61</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ICLR'18</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">10</td>
-                  <td class = "methoddt"><a href="https://proceedings.mlr.press/v162/hendrycks22a.html">Scaling Out-of-Distribution Detection for Real-World Settings</a></td>
-                  <td class = "archtd">KLM</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">79.04 ± 0.81</td>
-                  <td class = "aatd" >82.68 ± 0.21</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ICML'22</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">11</td>
-                  <td class = "methoddt"><a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4405_ECCV_2022_paper.php">DICE: Leveraging Sparsification for Out-of-Distribution Detection</a></td>
-                  <td class = "archtd">DICE</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">78.17 ± 0.80</td>
-                  <td class = "aatd" >84.23 ± 1.89</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ECCV'22</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">12</td>
-                  <td class = "methoddt"><a href="https://papers.nips.cc/paper/2018/hash/abdeb6f575ac5c6676b747bca8d09cc2-Abstract.html">A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks</a></td>
-                  <td class = "archtd">MDS</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">60.42 ± 0.26</td>
-                  <td class = "aatd" >73.90 ± 0.27</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">NeurIPS'18</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">13</td>
-                  <td class = "methoddt"><a href="https://proceedings.mlr.press/v119/sastry20a.html">Detecting Out-of-Distribution Examples with Gram Matrices</a></td>
-                  <td class = "archtd">Gram</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">58.65 ± 4.71</td>
-                  <td class = "aatd" >71.74 ± 3.20</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">ICML'20</td>
-              </tr>
-              
-              <tr>
-                  <td class = "ranktd">14</td>
-                  <td class = "methoddt"><a href="https://papers.nips.cc/paper/2021/hash/063e26c670d07bb7c4d30e6fc69fe056-Abstract.html">On the Importance of Gradients for Detecting Distributional Shifts in the Wild</a></td>
-                  <td class = "archtd">GradNorm</td>
-                  <!-- <td>nan</td> -->
-                  <td class = "aatd">95.06 ± 0.30</td>
-                  <td class = "catd">55.04 ± 0.93</td>
-                  <td class = "aatd" >57.55 ± 3.22</td>
-                  <td class = "datatd">No</td>
-                  <td class = "venuetd">NeurIPS'21</td>
-              </tr>
-              
-          </tbody>
-      </table>
-      <script>
-          $(document).ready(function () {
-              $("#_leaderboard_").DataTable({
-                  lengthMenu: [15, 25, 50, 75, 100],
-                  "drawCallback": function (settings) {
-                      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                  },
-                  language: {
-                      searchPlaceholder: "Papers, architectures, venues"
-                  },
-                  
-                  columnDefs: [
-                      { width: "15%", targets: 4 },
-                      { width: "15%", targets: 5 }
-                  ]
-                  
-              });
-          });
-      </script>
-      </div>
+      <div id="OpenOOD_Bench"></div>
     </section>
 
     <div class="vspace30"></div>
