@@ -1,4 +1,4 @@
-<table id = "{{ dataset }}_leaderboard" class="datatable" style="width: 100%">>
+<table id = "{{ dataset }}_leaderboard" class="datatable" style="width: 100%">
     <thead>
         <tr>
             <th class="rank">Rank</th>
@@ -36,7 +36,7 @@
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
             },
             language: {
-                searchPlaceholder: "Papers, architectures, venues"
+                searchPlaceholder: "Papers, aliases, venues"
             },
             {% if threat_model != "corruptions" %}
             columnDefs: [
