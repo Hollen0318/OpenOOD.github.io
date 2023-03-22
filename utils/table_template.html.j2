@@ -1,29 +1,29 @@
 <table>
     <thead>
         <tr>
-            <th class="rank">Paper</th>
-            <th class="rank">Alias</th>
+            <th class="rank">Rank</th>
+            <th class="method">Paper</th>
+            <th class="arch">Alias</th>
             <!-- <th>Additional Description</th> -->
-            <th class="rank">In-Distribution Accuracy</th>
-            <th class="rank">NearOOD AUROC</th>
-            <th class="rank">FarOOD AUROC</th>
-            <th class="rank">Outlier</th>
-            <th class="rank">Data</th>
-            <th class="rank">Venue</th>
+            <th class="aa">In-Distribution Accuracy</th>
+            <th class="ca">NearOOD AUROC</th>
+            <th class="aa">FarOOD AUROC</th>
+            <th class="extra-data">Outlier Data</th>
+            <th class="venue">Venue</th>
         </tr>
     </thead>
     <tbody>
         {% for model in models %}
         <tr>
-            <td><a href="{{ model.Link }}">{{ model.Paper }}</a></td>
-            <td>{{ model.Alias }}</td>
+            <td class = "ranktd">{{ model.Rank }}</td>
+            <td class = "methoddt"><a href="{{ model.Link }}">{{ model.Paper }}</a></td>
+            <td class = "archtd">{{ model.Alias }}</td>
             <!-- <td>{{ model['Additional Description'] }}</td> -->
-            <td>{{ model['In-Distribution Accuracy Mean'] }}</td>
-            <td>{{ model['NearOOD AUROC Mean'] }}</td>
-            <td>{{ model['FarOOD AUROC Mean'] }}</td>
-            <td>{{ model['Outlier Data'] }}</td>
-            <td>{{ model.Data }}</td>
-            <td>{{ model.Venue }}</td>
+            <td class = "aatd">{{ model['In-Distribution Accuracy Mean'] }}</td>
+            <td class = "catd">{{ model['NearOOD AUROC Mean'] }}</td>
+            <td class = "aatd" >{{ model['FarOOD AUROC Mean'] }}</td>
+            <td class = "datatd">{{ model['Outlier Data'] }}</td>
+            <td class = "venuetd">{{ model.Venue }}</td>
         </tr>
         {% endfor %}
     </tbody>

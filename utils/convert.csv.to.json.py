@@ -11,6 +11,12 @@ def csv_to_multiple_json_files(input_csv_file, output_path):
     df["NearOOD AUROC Mean"] = df["NearOOD AUROC"].str.extract(r"(\d+\.\d+)", expand=False)
     df["FarOOD AUROC Mean"] = df["FarOOD AUROC"].str.extract(r"(\d+\.\d+)", expand=False)
 
+    # Sort the DataFrame based on the "NearOOD AUROC Mean" column and reset the index
+    df = df.sort_values("NearOOD AUROC Mean", ascending=False).reset_index(drop=True)
+
+    # Create a "Rank" column with values from 1 to N, where N equals the total number of rows
+    df["Rank"] = df.index + 1
+    
     # Iterate through the DataFrame, creating a JSON file for each unique combination of 'Paper' and 'Alias' values
     for _, group in df.groupby(["Paper", "Alias"]):
         # Get the 'Paper' and 'Alias' values and use them as the filename

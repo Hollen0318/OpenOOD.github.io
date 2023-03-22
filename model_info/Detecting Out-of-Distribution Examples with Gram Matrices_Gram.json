@@ -10,5 +10,6 @@
   "Venue": "ICML'20",
   "In-Distribution Accuracy Mean": "95.06",
   "NearOOD AUROC Mean": "58.65",
-  "FarOOD AUROC Mean": "71.74"
+  "FarOOD AUROC Mean": "71.74",
+  "Rank": 13
 }

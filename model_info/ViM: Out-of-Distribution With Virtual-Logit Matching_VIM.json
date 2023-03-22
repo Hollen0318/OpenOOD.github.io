@@ -10,5 +10,6 @@
   "Venue": "CVPR'22",
   "In-Distribution Accuracy Mean": "95.06",
   "NearOOD AUROC Mean": "87.07",
-  "FarOOD AUROC Mean": "92.20"
+  "FarOOD AUROC Mean": "92.20",
+  "Rank": 7
 }

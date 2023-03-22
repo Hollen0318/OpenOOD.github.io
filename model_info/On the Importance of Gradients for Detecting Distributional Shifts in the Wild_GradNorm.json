@@ -10,5 +10,6 @@
   "Venue": "NeurIPS'21",
   "In-Distribution Accuracy Mean": "95.06",
   "NearOOD AUROC Mean": "55.04",
-  "FarOOD AUROC Mean": "57.55"
+  "FarOOD AUROC Mean": "57.55",
+  "Rank": 14
 }

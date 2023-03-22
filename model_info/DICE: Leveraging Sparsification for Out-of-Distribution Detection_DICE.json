@@ -10,5 +10,6 @@
   "Venue": "ECCV'22",
   "In-Distribution Accuracy Mean": "95.06",
   "NearOOD AUROC Mean": "78.17",
-  "FarOOD AUROC Mean": "84.23"
+  "FarOOD AUROC Mean": "84.23",
+  "Rank": 11
 }

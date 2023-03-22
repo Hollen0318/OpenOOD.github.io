@@ -10,5 +10,6 @@
   "Venue": "ICML'17",
   "In-Distribution Accuracy Mean": "95.06",
   "NearOOD AUROC Mean": "88.08",
-  "FarOOD AUROC Mean": "90.97"
+  "FarOOD AUROC Mean": "90.97",
+  "Rank": 2
 }

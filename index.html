@@ -1,54 +1,558 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenOOD</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178132094-1"></script>
   <script>
-    $(document).ready(function() {
-      $("#benchmark").load("output.html");
-    });
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "UA-178132094-1");
   </script>
+
+  <meta charset="UTF-8" />
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1" />-->
+  <meta name="viewport" content="width=1024" />
+  <title>RobustBench: Adversarial robustness benchmark</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" />
+  <link rel="stylesheet" href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css" />
+  <script src="https://kit.fontawesome.com/b939870cfb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.foundation.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.foundation.min.js"></script>
+
+  <link rel="stylesheet" href="./css/main.css" />
 </head>
+
+
 <body>
-  <header>
-    <div class="logo">OpenOOD</div>
-    <nav class="navigation">
-      <ul>
-        <li><a href="#">LeaderBoard</a></li>
-        <li><a href="#">Paper</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Contribute</a></li>
-        <li><a href="#">Models</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-md">
+      <div class="container">
+        <a class="navbar-brand" href="./index.html"
+          >RobustBench</a>
+        <button
+          class="navbar-toggler navbar-light"
+          type="button"
+          data-toggle="collapse"
+          data-target="#main-navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navigation">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#leaderboard">Leaderboards</a>
+            </li>
+            <li>
+              <a class="nav-link" href="https://arxiv.org/abs/2010.09670">Paper</a>
+            </li>
+            <li>
+              <a class="nav-link" href="#faq"
+                >FAQ</a
+              >
+            </li>
+            <li>
+              <a class="nav-link" href="#contribute">Contribute</a>
+            </li>
+            <li>
+              <a class="nav-link text-nowrap" href="https://github.com/RobustBench/robustbench"
+                >Model Zoo 🚀</a 
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+
+
+  <!-- <hr class="toprule" /> -->
+  <header>
+    <div class="header-block container">
+      <div class="logo"><img src="./images/logo.png" alt="logo" /></div>
+      <div class="title">RobustBench</div>
+      <div class="description">
+        A standardized benchmark for adversarial robustness
+      </div>
     </div>
   </header>
+  <!-- <hr class="toprule" /> -->
 
-  <main>
-    <section class="intro">
-      <p>Welcome to OpenOOD, a benchmark for Out-of-Distribution Detection.</p>
+  <div class="container">
+    <section id="introduction">
+      <div class="overview">
+        <p class="doublealign">
+          The goal of <strong>RobustBench</strong> is to systematically track
+          the <em>real</em> progress in adversarial robustness. There are
+          already
+          <a href="https://nicholas.carlini.com/writing/2019/all-adversarial-example-papers.html">more than 3&#39;000
+            papers</a>
+          on this topic, but it is still unclear which approaches really work
+          and which only lead to
+          <a href="https://arxiv.org/abs/1802.00420">overestimated robustness</a>. We start from benchmarking common
+          corruptions,
+          \(\ell_\infty\)- and
+          \(\ell_2\)-robustness since these are the most studied settings in the
+          literature. We use
+          <a href="https://github.com/fra31/auto-attack">AutoAttack</a>, an
+          ensemble of white-box and black-box attacks, to standardize the
+          evaluation (for details see <a href="https://arxiv.org/abs/2010.09670">our paper</a>) of the \(\ell_p\)
+          robustness and
+          CIFAR-10-C for the evaluation of robustness to common corruptions. Additionally,
+          we open source the
+          <a href="https://github.com/RobustBench/robustbench">RobustBench library</a>
+          that contains models used for the leaderboard to facilitate their
+          usage for downstream applications. <br><br>
+
+          To prevent potential overadaptation of new defenses to AutoAttack, we also welcome external evaluations based
+          on <em>adaptive attacks</em>, especially where AutoAttack <a href="https://github.com/fra31/auto-attack/blob/master/flags_doc.md">flags</a>
+          a potential overestimation of robustness. For each model, we are interested in the best known robust accuracy
+          and see AutoAttack and adaptive attacks as complementary.
+
+          <br><br>
+          <strong> News:</strong>
+          <ul>
+            <li>  <strong>May 2022:</strong> 
+              We have extended the common corruptions leaderboard on ImageNet with <a href="https://3dcommoncorruptions.epfl.ch">3D Common Corruptions</a> (ImageNet-3DCC). ImageNet-3DCC evaluation is interesting since (1) it includes more realistic corruptions and (2) it can be used to assess generalization of the existing models which may have overfitted to ImageNet-C. For a quickstart, click <a href="https://github.com/RobustBench/robustbench#new-evaluating-robustness-of-imagenet-models-against-3d-common-corruptions-imagenet-3dcc">here</a>. See the new leaderboard with ImageNet-C and ImageNet-3DCC <a href="https://robustbench.github.io/#div_imagenet_corruptions_heading">here</a> (also mCE metrics can be found <a href="https://github.com/RobustBench/robustbench#corruptions-imagenet-c--imagenet-3dcc">here</a>).
+             </li>
+             <li>  <strong>May 2022:</strong> 
+              We fixed the preprocessing issue for ImageNet corruption evaluations: previously we used resize to 256x256 and central crop to 224x224 which wasn't necessary since the ImageNet-C images are already 224x224. Note that this changed the ranking between the top-1 and top-2 entries.
+             </li>
+          </ul>
+
+
+
+        </p>
+        <div class="flexbox-container features">
+          <div class="element">
+            <div class="icon">
+              <img src="https://img.icons8.com/wired/100/000000/leaderboard.png" />
+            </div>
+            <p>
+              Up-to-date leaderboard based <br />
+              on 120+ models
+            </p>
+          </div>
+          <div class="element">
+            <div class="icon">
+              <img src="https://img.icons8.com/ios-glyphs/80/000000/user-credentials.png" />
+            </div>
+            <p>
+              Unified access to 80+ state-of-the-art <br />robust models via
+              Model Zoo
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <div class="box usage">
+          <p>Model Zoo</p>
+          <div class="divider">
+            <hr />
+          </div>
+          Check out the
+          <a href="https://github.com/RobustBench/robustbench#model-zoo">available models</a>
+          and our
+          <a href="https://github.com/RobustBench/robustbench#notebooks">Colab tutorials</a>.
+          <div class="codeblock">
+            <div class="vspace10"></div>
+            <!--
+# !pip install git+https://github.com/RobustBench/robustbench.git@v0.2.1
+from robustbench.utils import load_model
+# Load a model from the model zoo
+model = load_model(model_name='Rebuffi2021Fixing_70_16_cutmix_extra',
+                   dataset='cifar10',
+                   threat_model='Linf')
+
+# Evaluate the Linf robustness of the model using AutoAttack
+from robustbench.eval import benchmark
+clean_acc, robust_acc = benchmark(model,
+                                  dataset='cifar10',
+                                  threat_model='Linf')
+
+            -->
+            <!-- HTML generated using hilite.me -->
+            <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;">
+              <pre style="margin: 0; line-height: 125%"><span style="color: #888888"># !pip install git+https://github.com/RobustBench/robustbench@v0.2.1</span>
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">robustbench.utils</span> <span style="color: #008800; font-weight: bold">import</span> load_model
+<span style="color: #888888"># Load a model from the model zoo</span>
+model <span style="color: #333333">=</span> load_model(model_name<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Rebuffi2021Fixing_70_16_cutmix_extra&#39;</span>,
+                   dataset<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;cifar10&#39;</span>,
+                   threat_model<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Linf&#39;</span>)
+
+<span style="color: #888888"># Evaluate the Linf robustness of the model using AutoAttack</span>
+<span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">robustbench.eval</span> <span style="color: #008800; font-weight: bold">import</span> benchmark
+clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
+                                  dataset<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;cifar10&#39;</span>,
+                                  threat_model<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Linf&#39;</span>)
+</pre>
+            </div>
+
+
+            <!-- HTML generated using hilite.me -->
+            <div style="
+                background: #ffffff;
+                overflow: auto;
+                width: auto;
+                border: solid gray;
+                border-width: 0em 0em 0em 0em;
+                padding: 0.2em 0.6em;
+              ">
+
+              </pre>
+            </div>
+          </div>
+        </div>
+        <div class="box images">
+          <p>Analysis</p>
+          <div class="divider">
+            <hr />
+          </div>
+          Check out <a href="https://arxiv.org/abs/2010.09670">our paper</a> with a detailed analysis.
+          <div>
+            <!--          <div class="scroller analysis-images">-->
+            <img class="analysis" src="./images/aa_robustness_vs_venues_Linf.png" alt="robustness_vs_venues" />
+            <!--            <img-->
+            <!--              src="./images/aa_robustness_vs_standard_Linf.png"-->
+            <!--              alt="robustness_vs_clean"-->
+            <!--            />-->
+          </div>
+        </div>
+      </div>
+      <div class="vspace10"></div>
     </section>
-    <section id="benchmark"></section>
-  </main>
-<script>
-    function toggleMobileMenu() {
-      const menu = document.querySelector('.mobile-menu');
-      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
-    }
-    async function load(url) {
-    const response = await fetch(url);
-    const text = await response.text();
-    document.getElementById("benchmark").innerHTML = text;
-    }
 
-    load("output.html");
-</script>
+
+    <div id="leaderboard" class="container button-list">
+      <div class="heading">
+        <u>
+          Available Leaderboards
+        </u>
+      </div>
+      <a class="btn btn-secondary" href="#div_cifar10_Linf_heading">CIFAR-10 (\( \ell_\infty\))</a>
+      <a class="btn btn-secondary" href="#div_cifar10_L2_heading">CIFAR-10 (\( \ell_2\))</a>
+      <a class="btn btn-secondary" href="#div_cifar10_corruptions_heading">CIFAR-10 (Corruptions)</a>
+      <a class="btn btn-secondary" href="#div_cifar100_Linf_heading">CIFAR-100 (\( \ell_\infty\))</a>
+      <a class="btn btn-secondary" href="#div_cifar100_corruptions_heading">CIFAR-100 (Corruptions)</a>
+      <a class="btn btn-secondary" href="#div_imagenet_Linf_heading">ImageNet (\( \ell_\infty\))</a>
+      <a class="btn btn-secondary" href="#div_imagenet_corruptions_heading">ImageNet (Corruptions: IN-C, IN-3DCC)</a>
+    </div>
+
+
+    <section class="container" id="div_cifar10_Linf_heading">
+      <div class="heading">
+        <p>
+<!--          <div style="opacity:0;">1<br>1<br>1<br>1</div> &lt;!&ndash; Needed to introduce a margin for the navigation bar between leaderboards &ndash;&gt;-->
+          Leaderboard:
+          <span class="heading-math">CIFAR-10, \( \ell_\infty = 8/255 \)</span>,
+          untargeted attack
+        </p>
+      </div>
+
+      <div id="div_cifar10_Linf"></div>
+    </section>
+
+    <section>
+      <div class="heading" id="div_cifar10_L2_heading">
+        <p>
+          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
+          Leaderboard:
+          <span class="heading-math">CIFAR-10, \( \ell_2 = 0.5 \)</span>,
+          untargeted attack
+        </p>
+      </div>
+
+      <div id="div_cifar10_L2"></div>
+    </section>
+
+    <section>
+      <div class="heading" id="div_cifar10_corruptions_heading">
+        <p>
+          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
+          Leaderboard:
+          <span class="heading-math">CIFAR-10, Common Corruptions</span>,
+          CIFAR-10-C
+        </p>
+      </div>
+
+      <div id="div_cifar10_corruptions"></div>
+    </section>
+
+    <section>
+      <div class="heading" id="div_cifar100_Linf_heading">
+        <p>
+          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
+          Leaderboard:
+          <span class="heading-math">CIFAR-100, \( \ell_\infty = 8/255 \)</span>,
+          untargeted attack
+        </p>
+      </div>
+
+      <div id="div_cifar100_Linf"></div>
+    </section>
+
+    <section>
+      <div class="heading" id="div_cifar100_corruptions_heading">
+        <p>
+          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
+          Leaderboard:
+          <span class="heading-math">CIFAR-100, Common Corruptions</span>,
+          CIFAR-100-C
+        </p>
+      </div>
+
+      <div id="div_cifar100_corruptions"></div>
+    </section>
+
+    <section>
+      <div class="heading" id="div_imagenet_Linf_heading">
+        <p>
+          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
+          Leaderboard:
+          <span class="heading-math">ImageNet, \( \ell_\infty = 4/255 \)</span>,
+          untargeted attack
+        </p>
+      </div>
+
+      <div id="div_imagenet_Linf"></div>
+    </section>
+
+    <section>
+      <div class="heading" id="div_imagenet_corruptions_heading">
+        <p>
+          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
+          Leaderboard:
+          <span class="heading-math">ImageNet, Common Corruptions (ImageNet-C, ImageNet-3DCC)</span>
+        </p>
+      </div>
+
+      <div id="div_imagenet_corruptions"></div>
+    </section>
+
+    <div class="vspace30"></div>
+
+    <section id="faq">
+      <div class="heading">
+        <p>FAQ</p>
+      </div>
+
+      <p class="qa-box">
+        <span class="question">&#10148; How does the RobustBench leaderboard differ from the
+          <a href="https://github.com/fra31/auto-attack">AutoAttack leaderboard</a>? 🤔
+        </span>
+        <br />
+        <span class="answer"> The <a href="https://github.com/fra31/auto-attack">AutoAttack leaderboard</a> was
+          the starting point of RobustBench. Now only the RobustBench leaderboard is actively maintained.
+        </span>
+      </p>
+
+      <p class="qa-box">
+        <span class="question">&#10148; How does the RobustBench leaderboard differ from
+          <a href="https://www.robust-ml.org/">robust-ml.org</a>? 🤔
+        </span>
+        <br />
+        <span class="answer"><a href="https://www.robust-ml.org/">robust-ml.org</a> focuses on
+          <em>adaptive</em> evaluations, but we provide a
+          <strong>standardized benchmark</strong>. Adaptive evaluations have been very useful (e.g., see
+          <a href="https://arxiv.org/abs/2002.08347">Tramer et al., 2020</a>),
+          but they are also very time-consuming and cannot be standardized by definition. Instead, we argue
+          that one can estimate robustness accurately mostly <em>without</em> adaptive
+          attacks but for this one has to introduce some restrictions on the
+          considered models (see <a href="https://arxiv.org/abs/2010.09670">our paper</a> for more details).
+          However, we do welcome adaptive evaluations and we are always interested in showing the best known
+          robust accuracy.
+        </span>
+      </p>
+
+      <p class="qa-box">
+        <span class="question">&#10148; How is it related to libraries like
+          <a href="https://github.com/bethgelab/foolbox">foolbox</a> /
+          <a href="https://github.com/tensorflow/cleverhans">cleverhans</a> /
+          <a href="https://github.com/BorealisAI/advertorch">advertorch</a>? 🤔
+        </span>
+        <br />
+        <span class="answer">These libraries provide implementations of different
+          <em>attacks</em>. Besides the standardized benchmark,
+          <strong>RobustBench</strong> additionally provides a repository of the
+          most robust models. So you can start using the robust models in one
+          line of code (see the tutorial
+          <a href="https://github.com/RobustBench/robustbench#model-zoo-quick-tour">here</a>).</span>
+      </p>
+
+      <p class="qa-box">
+        <span class="question">&#10148; Why is Lp-robustness still interesting in 2021? 🤔
+        </span>
+        <br />
+        <span class="answer">There are numerous interesting applications of Lp-robustness that
+          span transfer learning (<a href="https://arxiv.org/abs/2007.08489">Salman et al. (2020)</a>,
+          <a href="https://arxiv.org/abs/2007.05869">Utrera et al. (2020)</a>),
+          interpretability (<a href="https://arxiv.org/abs/1805.12152">Tsipras et al. (2018)</a>, <a
+            href="https://arxiv.org/abs/1910.08640">Kaur et al. (2019)</a>,
+          <a href="https://arxiv.org/abs/1906.00945">Engstrom et al. (2019)</a>), security (<a
+            href="https://arxiv.org/abs/1811.03194">Tramèr et al. (2018)</a>,
+          <a href="https://arxiv.org/abs/1906.07153">Saadatpanah et al. (2019)</a>), generalization (<a
+            href="https://arxiv.org/abs/1911.09665">Xie et al. (2019)</a>, <a
+            href="https://arxiv.org/abs/1909.11764">Zhu et al. (2019)</a>,
+          <a href="https://arxiv.org/abs/2004.10934">Bochkovskiy et al. (2020)</a>), robustness to unseen perturbations
+          (<a href="https://arxiv.org/abs/1911.09665">Xie et al. (2019)</a>, <a
+            href="https://arxiv.org/abs/1905.01034">Kang et al. (2019)</a>),
+          stabilization of GAN training (<a href="https://arxiv.org/abs/2008.03364">Zhong et al. (2020)</a>).</span>
+      </p>
+
+      <p class="qa-box">
+        <span class="question">&#10148; What about verified adversarial robustness? 🤔
+        </span>
+        <br />
+        <span class="answer">We mostly focus on defenses which improve
+          <em>empirical</em> robustness, given the lack of clarity regarding
+          which approaches really improve robustness and which only make some
+          particular attacks unsuccessful.
+          However, we do not restrict submissions of verifiably robust models (e.g., we have
+          <a href="https://arxiv.org/abs/1906.06316">Zhang et al. (2019)</a> in our CIFAR-10 Linf leaderboard).
+          For methods targeting verified robustness, we encourage the readers to check out
+          <a href="https://arxiv.org/abs/1902.08722">Salman et al. (2019)</a>
+          and <a href="https://arxiv.org/abs/2009.04131">Li et al. (2020)</a>.
+        </span>
+      </p>
+
+      <p class="qa-box">
+        <span class="question">&#10148; What if I have a better attack than the one used in this
+          benchmark? 🤔
+        </span>
+        <br />
+        <span class="answer">We will be happy to add a better attack or any adaptive evaluation
+          that would complement our default standardized attacks!</span>
+      </p>
+    </section>
+
+
+
+    <div class="vspace50"></div>
+
+    <section id="citation">
+      <div class="heading">
+        <p>Citation</p>
+      </div>
+      Consider citing our whitepaper if you want to reference our leaderboard or if you are using the models from the
+      Model Zoo:
+      <!--      @article{croce2020robustbench,-->
+      <!--        title={RobustBench: a standardized adversarial robustness benchmark},-->
+      <!--        author={Croce, Francesco and Andriushchenko, Maksym and Sehwag, Vikash and Flammarion, Nicolas and Chiang, Mung and Mittal, Prateek and Matthias Hein},-->
+      <!--        journal={arXiv preprint arXiv:2010.09670},-->
+      <!--        year={2020}-->
+      <!--      }-->
+      <!-- HTML generated using hilite.me -->
+      <div
+        style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.0em .0em .0em .0em;padding:.2em .6em;">
+        <pre style="margin: 0; line-height: 125%"><span style="color: #555555; font-weight: bold">@article</span>{croce2020robustbench,
+    title<span style="color: #333333">=</span>{RobustBench: a standardized adversarial robustness benchmark},
+    author<span style="color: #333333">=</span>{Croce, Francesco <span style="color: #000000; font-weight: bold">and</span> Andriushchenko, Maksym <span style="color: #000000; font-weight: bold">and</span> Sehwag, Vikash <span style="color: #000000; font-weight: bold">and</span> Debenedetti, Edoardo <span style="color: #000000; font-weight: bold">and</span> Flammarion, Nicolas
+    <span style="color: #000000; font-weight: bold">and</span> Chiang, Mung <span style="color: #000000; font-weight: bold">and</span> Mittal, Prateek <span style="color: #000000; font-weight: bold">and</span> Matthias Hein},
+    journal<span style="color: #333333">=</span>{arXiv preprint arXiv:2010.09670},
+    year<span style="color: #333333">=</span>{2020}
+}</pre>
+      </div>
+
+    </section>
+
+    <div class="vspace50"></div>
+
+    <section id="contribute">
+      <div class="details">
+        <div class="box2">
+          <p>Contribute to RobustBench!</p>
+          <div class="divider">
+            <hr />
+          </div>
+          We welcome any contribution in terms of both new robust models and
+          evaluations. Please check
+          <a href="https://github.com/RobustBench/robustbench#how-to-contribute">here</a>
+          for more details.
+          <br />
+          <br />
+          Feel free to contact us at
+          <a href="mailto:adversarial.benchmark@gmail.com">adversarial.benchmark@gmail.com</a>
+        </div>
+        <div class="box2">
+          <p>Maintainers</p>
+          <div class="divider">
+            <hr />
+          </div>
+          <ul>
+            <li>
+              <a href="https://twitter.com/fra__31" target="_blank">Francesco Croce
+              </a>
+              <a href="https://twitter.com/fra__31"><i class="fas fa-globe"></i></a>
+              <a href="https://github.com/fra31"><i class="fab fa-github"></i></a>
+              <a href="https://scholar.google.com/citations?user=laq9cq0AAAAJ"><i class="ai ai-google-scholar"></i></a>
+            </li>
+            <li>
+              <a href="https://people.epfl.ch/maksym.andriushchenko" target="_blank">Maksym Andriushchenko</a>
+              <a href="https://people.epfl.ch/maksym.andriushchenko"><i class="fas fa-globe"></i></a>
+              <a href="https://github.com/max-andr"><i class="fab fa-github"></i></a>
+              <a href="https://scholar.google.com/citations?user=ZNtuJYoAAAAJ"><i class="ai ai-google-scholar"></i></a>
+            </li>
+            <li>
+              <a href="https://vsehwag.github.io/" target="_blank">Vikash Sehwag</a>
+              <a href="https://vsehwag.github.io/"><i class="fas fa-globe"></i></a>
+              <a href="https://github.com/VSehwag"><i class="fab fa-github"></i></a>
+              <a href="https://scholar.google.com/citations?user=JAkeEG8AAAAJ"><i class="ai ai-google-scholar"></i></a>
+            </li>
+            <li>
+              <a href="https://edoardo.science" target="_blank">Edoardo Debenedetti</a>
+              <a href="https://edoardo.science"><i class="fas fa-globe"></i></a>
+              <a href="https://github.com/dedeswim"><i class="fab fa-github"></i></a>
+              <a href="https://twitter.com/edoardo_debe"><i class="fab fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <hr class="bottomrule" />
+
+  <footer>
+    <small>&copy; 2021, RobustBench;
+      <a href="https://icons8.com/icon/100413/access">Icons from Icons8</a></small>
+  </footer>
+
+  <script>
+    // When the user scrolls the page, execute myFunction
+    window.onscroll = function () {
+      myFunction();
+    };
+    // Get the navbar
+    var navbar = document.getElementById("navbar");
+    // Get the offset position of the navbar
+    var sticky = navbar.offsetTop;
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+  <script>
+    $("#div_cifar10_Linf").load("./cifar10/Linf.html");
+    $("#div_cifar10_L2").load("./cifar10/L2.html");
+    $("#div_cifar10_corruptions").load("./cifar10/corruptions.html");
+    $("#div_cifar100_Linf").load("./cifar100/Linf.html");
+    $("#div_cifar100_corruptions").load("./cifar100/corruptions.html");
+    $("#div_imagenet_Linf").load("./imagenet/Linf.html");
+    $("#div_imagenet_corruptions").load("./imagenet/corruptions.html");
+  </script>
 </body>
-</html>
