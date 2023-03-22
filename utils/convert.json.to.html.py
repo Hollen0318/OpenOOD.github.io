@@ -26,5 +26,5 @@ if __name__ == "__main__":
     models = read_json_files(models_folder)
 
     template_file = "table_template.html.j2"
-    output_file = "output.html"
+    output_file = "/home/hz271/Research/OpenOOD.github.io/output.html"
     render_template(models, template_file, output_file)
