@@ -25,7 +25,7 @@ def render_template(models, folder, template_file, output_folder):
     # Sort the models based on the "Rank" column in ascending order
     sorted_models = sorted(models, key=lambda x: x['Rank'])
 
-    rendered_html = template.render(models=sorted_models)
+    rendered_html = template.render(models=sorted_models, dataset=folder)
 
     output_file = f"{folder}.html"
     output_file_path = os.path.join(output_folder, output_file)
