@@ -1,0 +1,49 @@
+<table>
+    <thead>
+        <tr>
+            <th class="rank">Paper</th>
+            <th class="rank">Alias</th>
+            <!-- <th>Additional Description</th> -->
+            <th class="rank">In-Distribution Accuracy</th>
+            <th class="rank">NearOOD AUROC</th>
+            <th class="rank">FarOOD AUROC</th>
+            <th class="rank">Outlier</th>
+            <th class="rank">Data</th>
+            <th class="rank">Venue</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for model in models %}
+        <tr>
+            <td><a href="{{ model.Link }}">{{ model.Paper }}</a></td>
+            <td>{{ model.Alias }}</td>
+            <!-- <td>{{ model['Additional Description'] }}</td> -->
+            <td>{{ model['In-Distribution Accuracy'] }}</td>
+            <td>{{ model['NearOOD AUROC'] }}</td>
+            <td>{{ model['FarOOD AUROC'] }}</td>
+            <td>{{ model['Outlier Data'] }}</td>
+            <td>{{ model.Data }}</td>
+            <td>{{ model.Venue }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<script>
+    $(document).ready(function () {
+        $("#{{ dataset }}_leaderboard_{{ threat_model }}").DataTable({
+            lengthMenu: [15, 25, 50, 75, 100],
+            "drawCallback": function (settings) {
+                MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+            },
+            language: {
+                searchPlaceholder: "Papers, architectures, venues"
+            },
+            {% if threat_model != "corruptions" %}
+            columnDefs: [
+                { width: "15%", targets: 4 },
+                { width: "15%", targets: 5 }
+            ]
+            {% endif %}
+        });
+    });
+</script>

@@ -1,0 +1,14 @@
+{
+  "Paper": "A simple baseline for detecting out-of-distribution and misclassified examples",
+  "Link": "https://openreview.net/forum?id=Hkg4TI9xl",
+  "Alias": "MSP",
+  "Additional Description": NaN,
+  "In-Distribution Accuracy": "95.06 \u00b1 0.30",
+  "NearOOD AUROC": "88.02 \u00b1 0.24",
+  "FarOOD AUROC": "90.73 \u00b1 0.43",
+  "Outlier Data": "No",
+  "Venue": "ICLR'17",
+  "In-Distribution Accuracy Mean": "95.06",
+  "NearOOD AUROC Mean": "88.02",
+  "FarOOD AUROC Mean": "90.73"
+}

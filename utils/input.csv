@@ -1,0 +1,15 @@
+Paper,Link,Alias,Additional Description,In-Distribution Accuracy,NearOOD AUROC,FarOOD AUROC,Outlier Data,Venue
+Towards open-set deep networks,https://openaccess.thecvf.com/content_cvpr_2016/papers/Bendale_Towards_Open_Set_CVPR_2016_paper.pdf,OpenMax,,95.06 ± 0.30,87.61 ± 0.28,89.62 ± 0.19,No,CVPR'16
+A simple baseline for detecting out-of-distribution and misclassified examples,https://openreview.net/forum?id=Hkg4TI9xl,MSP,,95.06 ± 0.30,88.02 ± 0.24,90.73 ± 0.43,No,ICLR'17
+On calibration of modern neural network,https://proceedings.mlr.press/v70/guo17a.html,TempScale,,95.06 ± 0.30,88.08 ± 0.29,90.97 ± 0.52,No,ICML'17
+Enhancing The Reliability of Out-of-distribution Image Detection in Neural Networks,https://openreview.net/forum?id=H1VGkIxRZ,ODIN,,95.06 ± 0.30,82.91 ± 1.83,87.96 ± 0.61,No,ICLR'18
+A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks,https://papers.nips.cc/paper/2018/hash/abdeb6f575ac5c6676b747bca8d09cc2-Abstract.html,MDS,,95.06 ± 0.30,60.42 ± 0.26,73.90 ± 0.27,No,NeurIPS'18
+Detecting Out-of-Distribution Examples with Gram Matrices,https://proceedings.mlr.press/v119/sastry20a.html,Gram,,95.06 ± 0.30,58.65 ± 4.71,71.74 ± 3.20,No,ICML'20
+Energy-based Out-of-distribution Detection,https://papers.nips.cc/paper/2020/hash/f5496252609c43eb8a3d147ab9b9c006-Abstract.html,EBO,,95.06 ± 0.30,87.59 ± 0.45,91.21 ± 0.92,No,NeurIPS'20
+On the Importance of Gradients for Detecting Distributional Shifts in the Wild,https://papers.nips.cc/paper/2021/hash/063e26c670d07bb7c4d30e6fc69fe056-Abstract.html,GradNorm,,95.06 ± 0.30,55.04 ± 0.93,57.55 ± 3.22,No,NeurIPS'21
+ReAct: Out-of-distribution Detection With Rectified Activations,https://papers.nips.cc/paper/2021/hash/01894d6f048493d2cacde3c579c315a3-Abstract.html,ReAct,,95.06 ± 0.30,85.40 ± 2.98,88.12 ± 3.13,No,NeurIPS'21
+Scaling Out-of-Distribution Detection for Real-World Settings,https://proceedings.mlr.press/v162/hendrycks22a.html,MLS,,95.06 ± 0.30,87.52 ± 0.46,91.10 ± 0.89,No,ICML'22
+Scaling Out-of-Distribution Detection for Real-World Settings,https://proceedings.mlr.press/v162/hendrycks22a.html,KLM,,95.06 ± 0.30,79.04 ± 0.81,82.68 ± 0.21,No,ICML'22
+ViM: Out-of-Distribution With Virtual-Logit Matching,https://openaccess.thecvf.com/content/CVPR2022/html/Wang_ViM_Out-of-Distribution_With_Virtual-Logit_Matching_CVPR_2022_paper.html,VIM,,95.06 ± 0.30,87.07 ± 0.56,92.20 ± 0.13,No,CVPR'22
+Out-of-Distribution Detection with Deep Nearest Neighbors,https://proceedings.mlr.press/v162/sun22d.html,KNN,,95.06 ± 0.30,90.64 ± 0.20,92.96 ± 0.14,No,ICML'22
+DICE: Leveraging Sparsification for Out-of-Distribution Detection,https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4405_ECCV_2022_paper.php,DICE,,95.06 ± 0.30,78.17 ± 0.80,84.23 ± 1.89,No,ECCV'22
