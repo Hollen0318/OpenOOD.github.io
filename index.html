@@ -41,7 +41,7 @@
   <nav class="navbar navbar-expand-md">
       <div class="container">
         <a class="navbar-brand" href="./index.html"
-          >RobustBench</a>
+          >OpenOOD</a>
         <button
           class="navbar-toggler navbar-light"
           type="button"
@@ -67,9 +67,7 @@
               <a class="nav-link" href="#contribute">Contribute</a>
             </li>
             <li>
-              <a class="nav-link text-nowrap" href="https://github.com/RobustBench/robustbench"
-                >Model Zoo 🚀</a 
-              >
+              <a class="nav-link text-nowrap" href="https://github.com/RobustBench/robustbench">Open Models ☄️</a>
             </li>
           </ul>
         </div>
@@ -93,7 +91,7 @@
     <section id="introduction">
       <div class="overview">
         <p class="doublealign">
-          The goal of <strong>OpenOODBench</strong>detection is to identify and handle data samples that
+          The goal of <strong>Out-Of-Distribution</strong> detection is to identify and handle data samples that
           are not from the same distribution as the training data, also known as in-distribution (ID) data. These OOD samples might come from unknown or novel classes, or they might be instances of known classes but with different characteristics due to variations in data collection or preprocessing.
           <br><br>
           <strong> News:</strong>
@@ -123,14 +121,14 @@
             </div>
             <p>
               Unified access to 80+ state-of-the-art <br />robust models via
-              Model Zoo
+              Open Models
             </p>
           </div>
         </div>
       </div>
       <div class="details">
         <div class="box usage">
-          <p>Model Zoo</p>
+          <p>Open Models</p>
           <div class="divider">
             <hr />
           </div>
@@ -143,7 +141,7 @@
             <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;">
               <pre style="margin: 0; line-height: 125%"><span style="color: #888888"># !pip install git+https://github.com/RobustBench/robustbench@v0.2.1</span>
 <span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">robustbench.utils</span> <span style="color: #008800; font-weight: bold">import</span> load_model
-<span style="color: #888888"># Load a model from the model zoo</span>
+<span style="color: #888888"># Load a model from the Open Models</span>
 model <span style="color: #333333">=</span> load_model(model_name<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Rebuffi2021Fixing_70_16_cutmix_extra&#39;</span>,
                    dataset<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;cifar10&#39;</span>,
                    threat_model<span style="color: #333333">=</span><span style="background-color: #fff0f0">&#39;Linf&#39;</span>)
@@ -333,7 +331,7 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
         <p>Citation</p>
       </div>
       Consider citing our whitepaper if you want to reference our leaderboard or if you are using the models from the
-      Model Zoo:
+      Open Models:
       <!--      @article{croce2020robustbench,-->
       <!--        title={RobustBench: a standardized adversarial robustness benchmark},-->
       <!--        author={Croce, Francesco and Andriushchenko, Maksym and Sehwag, Vikash and Flammarion, Nicolas and Chiang, Mung and Mittal, Prateek and Matthias Hein},-->
