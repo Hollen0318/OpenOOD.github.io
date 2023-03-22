@@ -167,22 +167,6 @@
           <a href="https://github.com/RobustBench/robustbench#notebooks">Colab tutorials</a>.
           <div class="codeblock">
             <div class="vspace10"></div>
-            <!--
-# !pip install git+https://github.com/RobustBench/robustbench.git@v0.2.1
-from robustbench.utils import load_model
-# Load a model from the model zoo
-model = load_model(model_name='Rebuffi2021Fixing_70_16_cutmix_extra',
-                   dataset='cifar10',
-                   threat_model='Linf')
-
-# Evaluate the Linf robustness of the model using AutoAttack
-from robustbench.eval import benchmark
-clean_acc, robust_acc = benchmark(model,
-                                  dataset='cifar10',
-                                  threat_model='Linf')
-
-            -->
-            <!-- HTML generated using hilite.me -->
             <div style="background: #ffffff; overflow:auto;width:auto;padding:.2em .6em;">
               <pre style="margin: 0; line-height: 125%"><span style="color: #888888"># !pip install git+https://github.com/RobustBench/robustbench@v0.2.1</span>
 <span style="color: #008800; font-weight: bold">from</span> <span style="color: #0e84b5; font-weight: bold">robustbench.utils</span> <span style="color: #008800; font-weight: bold">import</span> load_model
@@ -240,104 +224,20 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
           Available Leaderboards
         </u>
       </div>
-      <a class="btn btn-secondary" href="#div_cifar10_Linf_heading">CIFAR-10 (\( \ell_\infty\))</a>
-      <a class="btn btn-secondary" href="#div_cifar10_L2_heading">CIFAR-10 (\( \ell_2\))</a>
-      <a class="btn btn-secondary" href="#div_cifar10_corruptions_heading">CIFAR-10 (Corruptions)</a>
-      <a class="btn btn-secondary" href="#div_cifar100_Linf_heading">CIFAR-100 (\( \ell_\infty\))</a>
-      <a class="btn btn-secondary" href="#div_cifar100_corruptions_heading">CIFAR-100 (Corruptions)</a>
-      <a class="btn btn-secondary" href="#div_imagenet_Linf_heading">ImageNet (\( \ell_\infty\))</a>
-      <a class="btn btn-secondary" href="#div_imagenet_corruptions_heading">ImageNet (Corruptions: IN-C, IN-3DCC)</a>
+      <a class="btn btn-secondary" href="#OpenOOD_Bench_heading">CIFAR-10 (\( \ell_\infty\))</a>
     </div>
 
 
-    <section class="container" id="div_cifar10_Linf_heading">
+    <section class="container" id="OpenOOD_Bench_heading">
       <div class="heading">
         <p>
-<!--          <div style="opacity:0;">1<br>1<br>1<br>1</div> &lt;!&ndash; Needed to introduce a margin for the navigation bar between leaderboards &ndash;&gt;-->
           Leaderboard:
-          <span class="heading-math">CIFAR-10, \( \ell_\infty = 8/255 \)</span>,
-          untargeted attack
+          <span class="heading-math">CIFAR-10</span>,
+          OpenOOD Benchmark
         </p>
       </div>
 
-      <div id="div_cifar10_Linf"></div>
-    </section>
-
-    <section>
-      <div class="heading" id="div_cifar10_L2_heading">
-        <p>
-          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
-          Leaderboard:
-          <span class="heading-math">CIFAR-10, \( \ell_2 = 0.5 \)</span>,
-          untargeted attack
-        </p>
-      </div>
-
-      <div id="div_cifar10_L2"></div>
-    </section>
-
-    <section>
-      <div class="heading" id="div_cifar10_corruptions_heading">
-        <p>
-          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
-          Leaderboard:
-          <span class="heading-math">CIFAR-10, Common Corruptions</span>,
-          CIFAR-10-C
-        </p>
-      </div>
-
-      <div id="div_cifar10_corruptions"></div>
-    </section>
-
-    <section>
-      <div class="heading" id="div_cifar100_Linf_heading">
-        <p>
-          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
-          Leaderboard:
-          <span class="heading-math">CIFAR-100, \( \ell_\infty = 8/255 \)</span>,
-          untargeted attack
-        </p>
-      </div>
-
-      <div id="div_cifar100_Linf"></div>
-    </section>
-
-    <section>
-      <div class="heading" id="div_cifar100_corruptions_heading">
-        <p>
-          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
-          Leaderboard:
-          <span class="heading-math">CIFAR-100, Common Corruptions</span>,
-          CIFAR-100-C
-        </p>
-      </div>
-
-      <div id="div_cifar100_corruptions"></div>
-    </section>
-
-    <section>
-      <div class="heading" id="div_imagenet_Linf_heading">
-        <p>
-          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
-          Leaderboard:
-          <span class="heading-math">ImageNet, \( \ell_\infty = 4/255 \)</span>,
-          untargeted attack
-        </p>
-      </div>
-
-      <div id="div_imagenet_Linf"></div>
-    </section>
-
-    <section>
-      <div class="heading" id="div_imagenet_corruptions_heading">
-        <p>
-          <div style="opacity:0;">1<br>1<br>1<br>1</div> <!-- Needed to introduce a margin for the navigation bar between leaderboards -->
-          Leaderboard:
-          <span class="heading-math">ImageNet, Common Corruptions (ImageNet-C, ImageNet-3DCC)</span>
-        </p>
-      </div>
-
-      <div id="div_imagenet_corruptions"></div>
+      <div id="OpenOOD_Bench"></div>
     </section>
 
     <div class="vspace30"></div>
@@ -547,12 +447,6 @@ clean_acc, robust_acc <span style="color: #333333">=</span> benchmark(model,
     }
   </script>
   <script>
-    $("#div_cifar10_Linf").load("./cifar10/Linf.html");
-    $("#div_cifar10_L2").load("./cifar10/L2.html");
-    $("#div_cifar10_corruptions").load("./cifar10/corruptions.html");
-    $("#div_cifar100_Linf").load("./cifar100/Linf.html");
-    $("#div_cifar100_corruptions").load("./cifar100/corruptions.html");
-    $("#div_imagenet_Linf").load("./imagenet/Linf.html");
-    $("#div_imagenet_corruptions").load("./imagenet/corruptions.html");
+    $("#OpenOOD_Bench").load("/home/hz271/Research/OpenOOD.github.io/output/CIFAR10.html");
   </script>
 </body>

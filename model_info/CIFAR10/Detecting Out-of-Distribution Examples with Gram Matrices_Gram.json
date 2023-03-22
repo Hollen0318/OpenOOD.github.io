@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR10",
   "Paper": "Detecting Out-of-Distribution Examples with Gram Matrices",
   "Link": "https://proceedings.mlr.press/v119/sastry20a.html",
   "Alias": "Gram",

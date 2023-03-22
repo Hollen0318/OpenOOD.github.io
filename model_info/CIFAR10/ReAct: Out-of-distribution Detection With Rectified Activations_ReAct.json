@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR10",
   "Paper": "ReAct: Out-of-distribution Detection With Rectified Activations",
   "Link": "https://papers.nips.cc/paper/2021/hash/01894d6f048493d2cacde3c579c315a3-Abstract.html",
   "Alias": "ReAct",

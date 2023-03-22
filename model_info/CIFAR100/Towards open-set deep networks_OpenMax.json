@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR100",
   "Paper": "Towards open-set deep networks",
   "Link": "https://openaccess.thecvf.com/content_cvpr_2016/papers/Bendale_Towards_Open_Set_CVPR_2016_paper.pdf",
   "Alias": "OpenMax",

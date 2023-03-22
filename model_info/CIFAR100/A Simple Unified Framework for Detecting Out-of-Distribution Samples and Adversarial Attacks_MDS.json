@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR100",
   "Paper": "A Simple Unified Framework for Detecting Out-of-Distribution Samples and Adversarial Attacks",
   "Link": "https://papers.nips.cc/paper/2018/hash/abdeb6f575ac5c6676b747bca8d09cc2-Abstract.html",
   "Alias": "MDS",

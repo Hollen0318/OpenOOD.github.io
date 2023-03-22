@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR10",
   "Paper": "DICE: Leveraging Sparsification for Out-of-Distribution Detection",
   "Link": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4405_ECCV_2022_paper.php",
   "Alias": "DICE",

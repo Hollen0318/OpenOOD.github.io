@@ -1,0 +1,16 @@
+{
+  "Dataset": "CIFAR100",
+  "Paper": "Out-of-Distribution Detection with Deep Nearest Neighbors",
+  "Link": "https://proceedings.mlr.press/v162/sun22d.html",
+  "Alias": "KNN",
+  "Additional Description": NaN,
+  "In-Distribution Accuracy": "95.06 \u00b1 0.30",
+  "NearOOD AUROC": "90.64 \u00b1 0.20",
+  "FarOOD AUROC": "92.96 \u00b1 0.14",
+  "Outlier Data": "No",
+  "Venue": "ICML'22",
+  "In-Distribution Accuracy Mean": "95.06",
+  "NearOOD AUROC Mean": "90.64",
+  "FarOOD AUROC Mean": "92.96",
+  "Rank": 1
+}

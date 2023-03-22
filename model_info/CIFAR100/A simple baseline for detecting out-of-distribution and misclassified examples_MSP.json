@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR100",
   "Paper": "A simple baseline for detecting out-of-distribution and misclassified examples",
   "Link": "https://openreview.net/forum?id=Hkg4TI9xl",
   "Alias": "MSP",

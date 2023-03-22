@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR100",
   "Paper": "On the Importance of Gradients for Detecting Distributional Shifts in the Wild",
   "Link": "https://papers.nips.cc/paper/2021/hash/063e26c670d07bb7c4d30e6fc69fe056-Abstract.html",
   "Alias": "GradNorm",

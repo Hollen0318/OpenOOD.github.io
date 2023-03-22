@@ -3,28 +3,41 @@ import json
 from jinja2 import Environment, FileSystemLoader
 
 def read_json_files(folder):
-    models = []
-    for filename in os.listdir(folder):
-        if filename.endswith(".json"):
-            filepath = os.path.join(folder, filename)
-            with open(filepath, "r") as file:
-                model = json.load(file)
-                models.append(model)
-    return models
+    models_by_folder = {}
+    for subfolder in os.listdir(folder):
+        subfolder_path = os.path.join(folder, subfolder)
+        if os.path.isdir(subfolder_path):
+            models = []
+            for filename in os.listdir(subfolder_path):
+                if filename.endswith(".json"):
+                    filepath = os.path.join(subfolder_path, filename)
+                    with open(filepath, "r") as file:
+                        model = json.load(file)
+                        models.append(model)
+            models_by_folder[subfolder] = models
+    return models_by_folder
 
-def render_template(models, template_file, output_file):
+def render_template(models, folder, template_file, output_folder):
+    os.makedirs(output_folder, exist_ok=True)
     env = Environment(loader=FileSystemLoader("."))
     template = env.get_template(template_file)
 
-    rendered_html = template.render(models=models)
+    # Sort the models based on the "Rank" column in ascending order
+    sorted_models = sorted(models, key=lambda x: x['Rank'])
 
-    with open(output_file, "w") as file:
+    rendered_html = template.render(models=sorted_models)
+
+    output_file = f"{folder}.html"
+    output_file_path = os.path.join(output_folder, output_file)
+    with open(output_file_path, "w") as file:
         file.write(rendered_html)
 
 if __name__ == "__main__":
     models_folder = "/home/hz271/Research/OpenOOD.github.io/model_info"
-    models = read_json_files(models_folder)
+    models_by_folder = read_json_files(models_folder)
 
     template_file = "table_template.html.j2"
-    output_file = "/home/hz271/Research/OpenOOD.github.io/output.html"
-    render_template(models, template_file, output_file)
+    output_folder = "/home/hz271/Research/OpenOOD.github.io/output"
+
+    for folder, models in models_by_folder.items():
+        render_template(models, folder, template_file, output_folder)

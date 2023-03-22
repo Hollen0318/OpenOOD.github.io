@@ -1,15 +1,16 @@
 {
+  "Dataset": "CIFAR100",
   "Paper": "Scaling Out-of-Distribution Detection for Real-World Settings",
   "Link": "https://proceedings.mlr.press/v162/hendrycks22a.html",
-  "Alias": "KLM",
+  "Alias": "MLS",
   "Additional Description": NaN,
   "In-Distribution Accuracy": "95.06 \u00b1 0.30",
-  "NearOOD AUROC": "79.04 \u00b1 0.81",
-  "FarOOD AUROC": "82.68 \u00b1 0.21",
+  "NearOOD AUROC": "87.52 \u00b1 0.46",
+  "FarOOD AUROC": "91.10 \u00b1 0.89",
   "Outlier Data": "No",
   "Venue": "ICML'22",
   "In-Distribution Accuracy Mean": "95.06",
-  "NearOOD AUROC Mean": "79.04",
-  "FarOOD AUROC Mean": "82.68",
-  "Rank": 10
+  "NearOOD AUROC Mean": "87.52",
+  "FarOOD AUROC Mean": "91.10",
+  "Rank": 6
 }

@@ -1,0 +1,16 @@
+{
+  "Dataset": "CIFAR10",
+  "Paper": "On the Importance of Gradients for Detecting Distributional Shifts in the Wild",
+  "Link": "https://papers.nips.cc/paper/2021/hash/063e26c670d07bb7c4d30e6fc69fe056-Abstract.html",
+  "Alias": "GradNorm",
+  "Additional Description": NaN,
+  "In-Distribution Accuracy": "95.06 \u00b1 0.30",
+  "NearOOD AUROC": "55.04 \u00b1 0.93",
+  "FarOOD AUROC": "57.55 \u00b1 3.22",
+  "Outlier Data": "No",
+  "Venue": "NeurIPS'21",
+  "In-Distribution Accuracy Mean": "95.06",
+  "NearOOD AUROC Mean": "55.04",
+  "FarOOD AUROC Mean": "57.55",
+  "Rank": 14
+}

@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR10",
   "Paper": "ViM: Out-of-Distribution With Virtual-Logit Matching",
   "Link": "https://openaccess.thecvf.com/content/CVPR2022/html/Wang_ViM_Out-of-Distribution_With_Virtual-Logit_Matching_CVPR_2022_paper.html",
   "Alias": "VIM",

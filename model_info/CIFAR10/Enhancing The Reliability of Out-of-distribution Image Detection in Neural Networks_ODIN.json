@@ -1,0 +1,16 @@
+{
+  "Dataset": "CIFAR10",
+  "Paper": "Enhancing The Reliability of Out-of-distribution Image Detection in Neural Networks",
+  "Link": "https://openreview.net/forum?id=H1VGkIxRZ",
+  "Alias": "ODIN",
+  "Additional Description": NaN,
+  "In-Distribution Accuracy": "95.06 \u00b1 0.30",
+  "NearOOD AUROC": "82.91 \u00b1 1.83",
+  "FarOOD AUROC": "87.96 \u00b1 0.61",
+  "Outlier Data": "No",
+  "Venue": "ICLR'18",
+  "In-Distribution Accuracy Mean": "95.06",
+  "NearOOD AUROC Mean": "82.91",
+  "FarOOD AUROC Mean": "87.96",
+  "Rank": 9
+}

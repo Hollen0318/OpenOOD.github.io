@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR10",
   "Paper": "On calibration of modern neural network",
   "Link": "https://proceedings.mlr.press/v70/guo17a.html",
   "Alias": "TempScale",

@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR10",
   "Paper": "Out-of-Distribution Detection with Deep Nearest Neighbors",
   "Link": "https://proceedings.mlr.press/v162/sun22d.html",
   "Alias": "KNN",

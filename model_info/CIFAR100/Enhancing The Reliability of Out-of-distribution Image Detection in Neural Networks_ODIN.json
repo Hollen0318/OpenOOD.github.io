@@ -1,4 +1,5 @@
 {
+  "Dataset": "CIFAR100",
   "Paper": "Enhancing The Reliability of Out-of-distribution Image Detection in Neural Networks",
   "Link": "https://openreview.net/forum?id=H1VGkIxRZ",
   "Alias": "ODIN",
