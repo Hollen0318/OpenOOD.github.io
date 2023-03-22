@@ -43,3 +43,7 @@ if __name__ == "__main__":
     input_csv_file = "input.csv"
     output_path = "/home/hz271/Research/OpenOOD.github.io/model_info"
     csv_to_multiple_json_files(input_csv_file, output_path)
+
+# convert.csv.to.json
+# 1. 读取input.csv
+# 2. 根据不同的数据集，在model_info下建立文件夹，并根据nearOOD_auroc排序，在每个文件夹下放每一个row对应的JSON

@@ -41,3 +41,9 @@ if __name__ == "__main__":
 
     for folder, models in models_by_folder.items():
         render_template(models, folder, template_file, output_folder)
+
+# convert.json.to.html
+# 1. 读取model_info里的数据集文件夹
+# 2. 对每一个数据集，生成一个将所有json文件整合的html (里面只有table)，以数据集命名
+
+# index.html会自动去找到这个html table放到网页的leaderboard container里面
