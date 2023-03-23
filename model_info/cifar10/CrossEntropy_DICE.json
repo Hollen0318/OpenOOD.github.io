@@ -1,12 +1,16 @@
 {
   "Training": "CrossEntropy",
   "Postprocessor": "DICE",
-  "Additional Description": NaN,
-  "ID Accuracy": "95.06 \u00b1 0.30",
-  "Near-OOD AUROC": "78.17 \u00b1 0.80",
-  "Far-OOD AUROC": "84.23 \u00b1 1.89",
-  "Outlier Data": "No",
-  "ID Accuracy Mean": "95.06",
-  "Near-OOD AUROC Mean": "78.17",
-  "Far-OOD AUROC Mean": "84.23"
+  "Additional_Description": "",
+  "ID_Accuracy": "95.06 \u00b1 0.30",
+  "Near-OOD_AUROC": "78.17 \u00b1 0.80",
+  "Far-OOD_AUROC": "84.23 \u00b1 1.89",
+  "Outlier_Data": "No",
+  "Arch": "ResNet18",
+  "ID_Accuracy_Mean": "95.06",
+  "Near-OOD_AUROC_Mean": "78.17",
+  "Far-OOD_AUROC_Mean": "84.23",
+  "Rank": 11,
+  "Training_Link": "",
+  "PP_Link": "https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4405_ECCV_2022_paper.php"
 }
