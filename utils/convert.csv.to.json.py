@@ -31,9 +31,11 @@ def csv_to_multiple_json_files(input_csv_file, output_root):
         postproc = df.iloc[i]["Postprocessor"]
         extra_desc = df.iloc[i]["Additional_Description"]
         output_filename = f"{training}_{postproc}"
-        if not np.isnan(extra_desc):
+        if isinstance(extra_desc, str) and len(extra_desc) > 0:
             output_filename += f"_{extra_desc}"
         output_filename += ".json"
+        output_filename = output_filename.replace(' ', '_')
+
         json_data = df.iloc[i:i+1].to_dict("records")
 
         training_with_link_list = []
@@ -60,7 +62,7 @@ def csv_to_multiple_json_files(input_csv_file, output_root):
         #json_data[0]["Training_Link"] = paper_dict[training]["Link"] if training in paper_dict else ""
         #json_data[0]["PP_Link"] = paper_dict[postproc]["Link"]
         
-        if np.isnan(extra_desc):
+        if not isinstance(extra_desc, str):
             json_data[0]["Additional_Description"] = ""
 
         # Write the JSON object to a file, one record per line
