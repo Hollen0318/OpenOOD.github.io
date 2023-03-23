@@ -13,3 +13,13 @@ KLM,Scaling Out-of-Distribution Detection for Real-World Settings,https://procee
 VIM,ViM: Out-of-Distribution With Virtual-Logit Matching,https://openaccess.thecvf.com/content/CVPR2022/html/Wang_ViM_Out-of-Distribution_With_Virtual-Logit_Matching_CVPR_2022_paper.html,CVPR'22
 KNN,Out-of-Distribution Detection with Deep Nearest Neighbors,https://proceedings.mlr.press/v162/sun22d.html,ICML'22
 DICE,DICE: Leveraging Sparsification for Out-of-Distribution Detection,https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4405_ECCV_2022_paper.php,ECCV'22
+ASH,Extremely Simple Activation Shaping for Out-of-Distribution Detection,https://openreview.net/forum?id=ndYXTEL6cZz,ICLR'23
+Cutout,,https://arxiv.org/abs/1708.04552,
+RandAugment,,https://papers.nips.cc/paper_files/paper/2020/hash/d85b63ef0ccb114d0a3bb7b7d808028f-Abstract.html,
+PixMix,,https://openaccess.thecvf.com/content/CVPR2022/html/Hendrycks_PixMix_Dreamlike_Pictures_Comprehensively_Improve_Safety_Measures_CVPR_2022_paper.html,
+RegMixup,,https://openreview.net/forum?id=5j6fWcPccO,
+ConfBranch,,https://arxiv.org/pdf/1802.04865.pdf,
+RotPred,,https://papers.nips.cc/paper/2019/hash/a2b15837edac15df90721968986f7f8e-Abstract.html,
+G-ODIN,,https://openaccess.thecvf.com/content_CVPR_2020/html/Hsu_Generalized_ODIN_Detecting_Out-of-Distribution_Image_Without_Learning_From_Out-of-Distribution_Data_CVPR_2020_paper.html,
+VOS,,https://openreview.net/forum?id=TW7d65uYu5M,
+LogitNorm,,https://proceedings.mlr.press/v162/wei22d.html,

@@ -16,13 +16,8 @@
         {% for model in models %}
         <tr>
             <td class = "ranktd">{{ model.Rank }}</td>
-            {% if model.Training_Link != "" %}
-            <td class = "trainingtd"><a href="{{ model.Training_Link }}">{{ model.Training }}</a></td>
-            {% endif %}
-            {% if model.Training_Link == "" %}
             <td class = "trainingtd">{{ model.Training }}</td>
-            {% endif %}
-            <td class = "pptd"><a href="{{ model.PP_Link }}">{{ model.Postprocessor }}</a></td>
+            <td class = "pptd">{{ model.Postprocessor }}</td>
             <td class = "idtd">{{ model['ID_Accuracy_Mean'] }}</td>
             <td class = "notd">{{ model['Near-OOD_AUROC_Mean'] }}</td>
             <td class = "fotd" >{{ model['Far-OOD_AUROC_Mean'] }}</td>

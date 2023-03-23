@@ -35,8 +35,31 @@ def csv_to_multiple_json_files(input_csv_file, output_root):
             output_filename += f"_{extra_desc}"
         output_filename += ".json"
         json_data = df.iloc[i:i+1].to_dict("records")
-        json_data[0]["Training_Link"] = paper_dict[training]["Link"] if training in paper_dict else ""
-        json_data[0]["PP_Link"] = paper_dict[postproc]["Link"]
+
+        training_with_link_list = []
+        for temp in training.split(' + '):
+            if temp in paper_dict:
+                training_with_link_list.append(
+                    f"<a href={paper_dict[temp]['Link']}>{temp}</a>"
+                )
+            else:
+                training_with_link_list.append(
+                    temp
+                )
+        training_with_link = ' + '.join(training_with_link_list)
+        json_data[0]["Training"] = training_with_link
+
+        pp_with_link_list = []
+        for temp in postproc.split(' + '):
+            pp_with_link_list.append(
+                f"<a href={paper_dict[temp]['Link']}>{temp}</a>"
+            )
+        pp_with_link = ' + '.join(pp_with_link_list)
+        json_data[0]["Postprocessor"] = pp_with_link
+
+        #json_data[0]["Training_Link"] = paper_dict[training]["Link"] if training in paper_dict else ""
+        #json_data[0]["PP_Link"] = paper_dict[postproc]["Link"]
+        
         if np.isnan(extra_desc):
             json_data[0]["Additional_Description"] = ""
 
