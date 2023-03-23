@@ -1,34 +1,34 @@
 Training,Postprocessor,ID_Accuracy,Near-OOD_AUROC,Far-OOD_AUROC,Outlier_Data,Arch,Additional_Description
-CrossEntropy,OpenMax,95.06 ± 0.30,87.61 ± 0.28,89.62 ± 0.19,No,ResNet18,
-CrossEntropy,MSP,95.06 ± 0.30,88.02 ± 0.24,90.73 ± 0.43,No,ResNet18,
-CrossEntropy,TempScale,95.06 ± 0.30,88.08 ± 0.29,90.97 ± 0.52,No,ResNet18,
-CrossEntropy,ODIN,95.06 ± 0.30,82.91 ± 1.83,87.96 ± 0.61,No,ResNet18,
-CrossEntropy,MDS,95.06 ± 0.30,60.42 ± 0.26,73.90 ± 0.27,No,ResNet18,
-CrossEntropy,Gram,95.06 ± 0.30,58.65 ± 4.71,71.74 ± 3.20,No,ResNet18,
-CrossEntropy,EBO,95.06 ± 0.30,87.59 ± 0.45,91.21 ± 0.92,No,ResNet18,
-CrossEntropy,GradNorm,95.06 ± 0.30,55.04 ± 0.93,57.55 ± 3.22,No,ResNet18,
-CrossEntropy,ReAct,95.06 ± 0.30,85.40 ± 2.98,88.12 ± 3.13,No,ResNet18,
-CrossEntropy,MLS,95.06 ± 0.30,87.52 ± 0.46,91.10 ± 0.89,No,ResNet18,
-CrossEntropy,KLM,95.06 ± 0.30,79.04 ± 0.81,82.68 ± 0.21,No,ResNet18,
-CrossEntropy,VIM,95.06 ± 0.30,87.07 ± 0.56,92.20 ± 0.13,No,ResNet18,
-CrossEntropy,KNN,95.06 ± 0.30,90.64 ± 0.20,92.96 ± 0.14,No,ResNet18,
-CrossEntropy,DICE,95.06 ± 0.30,78.17 ± 0.80,84.23 ± 1.89,No,ResNet18,
-CrossEntropy,ASH,95.06 ± 0.30,75.71 ± 0.67,79.48 ± 2.25,No,ResNet18,
-CrossEntropy + Cutout,MSP,95.79 ± 0.12,90.49 ± 0.20,92.96 ± 0.70,No,ResNet18,
-CrossEntropy + Cutout,KNN,95.79 ± 0.12,92.17 ± 0.12,95.09 ± 0.38,No,ResNet18,
-CrossEntropy + RandAugment,MSP,95.59 ± 0.03,90.14 ± 0.03,92.72 ± 0.12,No,ResNet18,
-CrossEntropy + RandAugment,KNN,95.59 ± 0.03,91.97 ± 0.07,94.39 ± 0.15,No,ResNet18,
-CrossEntropy + PixMix,MSP,95.15 ± 0.09,93.09 ± 0.15,95.65 ± 0.14,No,ResNet18,
-CrossEntropy + PixMix,KNN,95.15 ± 0.09,93.13 ± 0.16,95.94 ± 0.16,No,ResNet18,
-CrossEntropy + SIO,MSP,95.36 ± 0.14,90.29 ± 0.06,92.60 ± 0.17,No,ResNet18,
-CrossEntropy + SIO,KNN,95.36 ± 0.14,91.86 ± 0.09,94.14 ± 0.25,No,ResNet18,
-RegMixup,MSP,95.75 ± 0.15,87.46 ± 0.48,90.25 ± 1.90,No,ResNet18,
-ConfBranch,ConfBranch,94.88 ± 0.05,89.78 ± 0.25,92.85 ± 0.29,No,ResNet18,
-RotPred,RotPred,95.35 ± 0.52,92.62 ± 0.28,96.62 ± 0.18,No,ResNet18,
-RotPred + PixMix,RotPred,95.91 ± 0.25,94.88 ± 0.14,98.18 ± 0.14,No,ResNet18,
-G-ODIN,G-ODIN,94.70 ± 0.25,89.08 ± 0.58,95.51 ± 0.31,No,ResNet18,
-VOS,EBO,94.31 ± 0.64,87.74 ± 0.49,90.83 ± 0.92,No,ResNet18,
-VOS,KNN,94.31 ± 0.64,90.44 ± 0.54,92.80 ± 0.52,No,ResNet18,
-LogitNorm,MSP,94.30 ± 0.25,92.32 ± 0.08,96.74 ± 0.06,No,ResNet18,
-LogitNorm,KNN,94.30 ± 0.25,91.18 ± 0.12,95.54 ± 0.32,No,ResNet18,
-LogitNorm + PixMix,MSP,94.60 ± 0.25,94.28 ± 0.20,97.90 ± 0.15,No,ResNet18,
+CrossEntropy,OpenMax,95.06 ± 0.30,87.61 ± 0.28,89.62 ± 0.19,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,MSP,95.06 ± 0.30,88.02 ± 0.24,90.73 ± 0.43,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,TempScale,95.06 ± 0.30,88.08 ± 0.29,90.97 ± 0.52,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,ODIN,95.06 ± 0.30,82.91 ± 1.83,87.96 ± 0.61,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,MDS,95.06 ± 0.30,60.42 ± 0.26,73.90 ± 0.27,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,Gram,95.06 ± 0.30,58.65 ± 4.71,71.74 ± 3.20,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,EBO,95.06 ± 0.30,87.59 ± 0.45,91.21 ± 0.92,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,GradNorm,95.06 ± 0.30,55.04 ± 0.93,57.55 ± 3.22,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,ReAct,95.06 ± 0.30,85.40 ± 2.98,88.12 ± 3.13,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,MLS,95.06 ± 0.30,87.52 ± 0.46,91.10 ± 0.89,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,KLM,95.06 ± 0.30,79.04 ± 0.81,82.68 ± 0.21,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,VIM,95.06 ± 0.30,87.07 ± 0.56,92.20 ± 0.13,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,KNN,95.06 ± 0.30,90.64 ± 0.20,92.96 ± 0.14,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,DICE,95.06 ± 0.30,78.17 ± 0.80,84.23 ± 1.89,No,ResNet18,100 epochs; cosine lr
+CrossEntropy,ASH,95.06 ± 0.30,75.71 ± 0.67,79.48 ± 2.25,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + Cutout,MSP,95.79 ± 0.12,90.49 ± 0.20,92.96 ± 0.70,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + Cutout,KNN,95.79 ± 0.12,92.17 ± 0.12,95.09 ± 0.38,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + RandAugment,MSP,95.59 ± 0.03,90.14 ± 0.03,92.72 ± 0.12,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + RandAugment,KNN,95.59 ± 0.03,91.97 ± 0.07,94.39 ± 0.15,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + PixMix,MSP,95.15 ± 0.09,93.09 ± 0.15,95.65 ± 0.14,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + PixMix,KNN,95.15 ± 0.09,93.13 ± 0.16,95.94 ± 0.16,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + SIO,MSP,95.36 ± 0.14,90.29 ± 0.06,92.60 ± 0.17,No,ResNet18,100 epochs; cosine lr
+CrossEntropy + SIO,KNN,95.36 ± 0.14,91.86 ± 0.09,94.14 ± 0.25,No,ResNet18,100 epochs; cosine lr
+RegMixup,MSP,95.75 ± 0.15,87.46 ± 0.48,90.25 ± 1.90,No,ResNet18,100 epochs; cosine lr
+ConfBranch,ConfBranch,94.88 ± 0.05,89.78 ± 0.25,92.85 ± 0.29,No,ResNet18,100 epochs; cosine lr
+RotPred,RotPred,95.35 ± 0.52,92.62 ± 0.28,96.62 ± 0.18,No,ResNet18,100 epochs; cosine lr
+RotPred + PixMix,RotPred,95.91 ± 0.25,94.88 ± 0.14,98.18 ± 0.14,No,ResNet18,100 epochs; cosine lr
+G-ODIN,G-ODIN,94.70 ± 0.25,89.08 ± 0.58,95.51 ± 0.31,No,ResNet18,100 epochs; cosine lr
+VOS,EBO,94.31 ± 0.64,87.74 ± 0.49,90.83 ± 0.92,No,ResNet18,100 epochs; cosine lr
+VOS,KNN,94.31 ± 0.64,90.44 ± 0.54,92.80 ± 0.52,No,ResNet18,100 epochs; cosine lr
+LogitNorm,MSP,94.30 ± 0.25,92.32 ± 0.08,96.74 ± 0.06,No,ResNet18,100 epochs; cosine lr
+LogitNorm,KNN,94.30 ± 0.25,91.18 ± 0.12,95.54 ± 0.32,No,ResNet18,100 epochs; cosine lr
+LogitNorm + PixMix,MSP,94.60 ± 0.25,94.28 ± 0.20,97.90 ± 0.15,No,ResNet18,100 epochs; cosine lr
