@@ -1,0 +1,15 @@
+Training,Postprocessor,Additional Description,ID Accuracy,Near-OOD AUROC,Far-OOD AUROC,Outlier Data
+CrossEntropy,OpenMax,,95.06 ± 0.30,87.61 ± 0.28,89.62 ± 0.19,No
+CrossEntropy,MSP,,95.06 ± 0.30,88.02 ± 0.24,90.73 ± 0.43,No
+CrossEntropy,TempScale,,95.06 ± 0.30,88.08 ± 0.29,90.97 ± 0.52,No
+CrossEntropy,ODIN,,95.06 ± 0.30,82.91 ± 1.83,87.96 ± 0.61,No
+CrossEntropy,MDS,,95.06 ± 0.30,60.42 ± 0.26,73.90 ± 0.27,No
+CrossEntropy,Gram,,95.06 ± 0.30,58.65 ± 4.71,71.74 ± 3.20,No
+CrossEntropy,EBO,,95.06 ± 0.30,87.59 ± 0.45,91.21 ± 0.92,No
+CrossEntropy,GradNorm,,95.06 ± 0.30,55.04 ± 0.93,57.55 ± 3.22,No
+CrossEntropy,ReAct,,95.06 ± 0.30,85.40 ± 2.98,88.12 ± 3.13,No
+CrossEntropy,MLS,,95.06 ± 0.30,87.52 ± 0.46,91.10 ± 0.89,No
+CrossEntropy,KLM,,95.06 ± 0.30,79.04 ± 0.81,82.68 ± 0.21,No
+CrossEntropy,VIM,,95.06 ± 0.30,87.07 ± 0.56,92.20 ± 0.13,No
+CrossEntropy,KNN,,95.06 ± 0.30,90.64 ± 0.20,92.96 ± 0.14,No
+CrossEntropy,DICE,,95.06 ± 0.30,78.17 ± 0.80,84.23 ± 1.89,No

@@ -1,0 +1,12 @@
+{
+  "Training": "CrossEntropy",
+  "Postprocessor": "TempScale",
+  "Additional Description": NaN,
+  "ID Accuracy": "95.06 \u00b1 0.30",
+  "Near-OOD AUROC": "88.08 \u00b1 0.29",
+  "Far-OOD AUROC": "90.97 \u00b1 0.52",
+  "Outlier Data": "No",
+  "ID Accuracy Mean": "95.06",
+  "Near-OOD AUROC Mean": "88.08",
+  "Far-OOD AUROC Mean": "90.97"
+}
