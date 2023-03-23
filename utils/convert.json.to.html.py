@@ -33,17 +33,11 @@ def render_template(models, folder, template_file, output_folder):
         file.write(rendered_html)
 
 if __name__ == "__main__":
-    models_folder = "/home/hz271/Research/OpenOOD.github.io/model_info"
+    models_folder = "../model_info"
     models_by_folder = read_json_files(models_folder)
 
     template_file = "table_template.html.j2"
-    output_folder = "/home/hz271/Research/OpenOOD.github.io/output"
+    output_folder = "../html_outputs"
 
     for folder, models in models_by_folder.items():
         render_template(models, folder, template_file, output_folder)
-
-# convert.json.to.html
-# 1. 读取model_info里的数据集文件夹
-# 2. 对每一个数据集，生成一个将所有json文件整合的html (里面只有table)，以数据集命名
-
-# index.html会自动去找到这个html table放到网页的leaderboard container里面
